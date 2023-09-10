@@ -40,7 +40,7 @@ $ cd {app_name}
 
 # Tips
 ## artisan command in docker sail
-- you type './vendor/bin/sail' before artisan commands
+- you type `./vendor/bin/sail` before artisan commands
     - exmaples
     ```
     $ ./vendor/bin/sail aritsan serve
