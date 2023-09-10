@@ -18,7 +18,7 @@ $ cd {app_name}
 {app_name} $ ./vendor/bin/sail up -d
 {app_name} $ ./vendor/bin/sail artisan serve
 ```
-- click a following link to (http://localhost)[http://localhost/] to confirm laravel is working
+- click a following link to [http://localhost](http://localhost/) to confirm laravel is working
 
 ### step 3 a connection between application(laravel) and database(mysql)
 - if you confirmed a welcome page, you run migrate for checking connection of database
@@ -63,4 +63,4 @@ $ cd {app_name}
     ```
 
 # Refrence
-(Tutorial)[https://www.hypertextcandy.com/laravel-tutorial-introduction/]
+[Tutorial](https://www.hypertextcandy.com/laravel-tutorial-introduction/)
