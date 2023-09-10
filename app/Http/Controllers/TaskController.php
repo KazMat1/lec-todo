@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Folder;
+use Illuminate\Contracts\View\View;
 
 class TaskController extends Controller
 {
     //
-    public function index(int $id)
+    public function index(int $id): View
     {
         $folders = Folder::all();
 
