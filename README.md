@@ -30,5 +30,29 @@ $ cd {app_name}
 {app_name} $ git push origin -u main
 ```
 
+# tips
+## artisan command in docker sail
+- you type './vendor/bin/sail' before artisan commands
+    - exmaples
+    ```
+    $ ./vendor/bin/sail aritsan serve
+    $ ./vendor/bin/sail aritsan tinker
+    $ ./vendor/bin/sail aritsan db
+    $ ./vendor/bin/sail aritsan db:seed
+    $ ./vendor/bin/sail aritsan migrate
+    $ ./vendor/bin/sail aritsan migrate:refresh
+    $ ./vendor/bin/sail aritsan migrate:refresh --seed
+    $ ./vendor/bin/sail aritsan migrate:fresh
+    $ ./vendor/bin/sail aritsan migrate:fresh --seed
+    $ ./vendor/bin/sail aritsan make:controller
+    $ ./vendor/bin/sail aritsan make:model
+    $ ./vendor/bin/sail aritsan make:migration
+    $ ./vendor/bin/sail aritsan make:seeder
+    $ ./vendor/bin/sail aritsan make:factory
+    $ ./vendor/bin/sail aritsan make:middleware
+    $ ./vendor/bin/sail aritsan make:rule
+    $ ./vendor/bin/sail aritsan make:scope
+    ```
+
 ## refrence
 (Tutorial)[https://www.hypertextcandy.com/laravel-tutorial-introduction/]
