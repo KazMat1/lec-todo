@@ -18,6 +18,9 @@ class FolderFactory extends Factory
     {
         return [
             //
+            'title' => $this->faker->title(),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 }
