@@ -1,6 +1,7 @@
 # Get started
 *you can change a value within {} as you like*
 ## step of project
+### step 1 build a environment
 - open your terminal and copy and paste below
 ```
 {your_directory} $ curl -s "https://laravel.build/{app_name}" | bash
@@ -11,17 +12,24 @@
 $ cd {app_name}
 {app_name} $ ./vendor/bin/sail up -d
 ```
+### step 2 run laravel in docker
 - after you built a dev environment, you run built-in server while running containers
 ```
 {app_name} $ ./vendor/bin/sail up -d
 {app_name} $ ./vendor/bin/sail artisan serve
 ```
+- click a following link to (http://localhost)[http://localhost/] to confirm laravel is working
 
-- click a following link to (http://localhost)[http://localhost/]
+### step 3 a connection between application(laravel) and database(mysql)
+- if you confirmed a welcome page, you run migrate for checking connection of database
+```
+{app_name} $ ./vendor/bin/sail artisan migrate
+```
+- if you reach this line, you are ready to develop a application🎉
 
-- if you confirm a welcome page of laravel ver.10, you've done a building dev environment
-
-- push a remote repository of github. the commands from the next line is the way you push a existing a repository, so you create a remote reository of a project on github before run the commands
+### step 4 source code management
+- push a remote repository of github.
+- the commands from the next line is the way you push a existing a repository, so you create a remote reository of a project on github before run the commands
 ```
 {app_name} $ git init
 {app_name} $ git add .
@@ -30,7 +38,7 @@ $ cd {app_name}
 {app_name} $ git push origin -u main
 ```
 
-# tips
+# Tips
 ## artisan command in docker sail
 - you type './vendor/bin/sail' before artisan commands
     - exmaples
@@ -54,5 +62,5 @@ $ cd {app_name}
     $ ./vendor/bin/sail aritsan make:scope
     ```
 
-## refrence
+# Refrence
 (Tutorial)[https://www.hypertextcandy.com/laravel-tutorial-introduction/]
