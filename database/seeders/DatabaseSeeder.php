@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Folder::factory(10)->create();
+        Folder::factory(1)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             FolderSeeder::class,
+            TaskSeeder::class,
         ]);
     }
 }
