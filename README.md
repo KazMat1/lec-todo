@@ -1,18 +1,18 @@
 # Get started
 *you can change a value within {} as you like*
 ## step of project
-### step 1 build a environment
+### step1: build a environment
 - open your terminal and copy and paste below
 ```
 {your_directory} $ curl -s "https://laravel.build/{app_name}" | bash
 ```
 
-- if you finished, move directory and build a container of docker
+- if you finished, move directory and build containers of the docker
 ```
 $ cd {app_name}
 {app_name} $ ./vendor/bin/sail up -d
 ```
-### step 2 run laravel in docker
+### step2: run laravel in the docker
 - after you built a dev environment, you run built-in server while running containers
 ```
 {app_name} $ ./vendor/bin/sail up -d
@@ -20,16 +20,16 @@ $ cd {app_name}
 ```
 - click a following link to [http://localhost](http://localhost/) to confirm laravel is working
 
-### step 3 a connection between application(laravel) and database(mysql)
-- if you confirmed a welcome page, you run migrate for checking connection of database
+### step3: a connection between application(laravel) and database(mysql)
+- if you confirmed a welcome page, you run `./vendor/bin/sail artisan migrate` for checking connection of database
 ```
 {app_name} $ ./vendor/bin/sail artisan migrate
 ```
-- if you reach this line, you are ready to develop a application🎉
+- if you reach this line, you are ready to develop an application🎉
 
-### step 4 source code management
-- push a remote repository of github.
-- the commands from the next line is the way you push a existing a repository, so you create a remote reository of a project on github before run the commands
+### step4: source code management
+- push a remote repository on github.
+- the commands from the next line is the way you push a existing a repository, so you create a remote repository of a project on github before run the commands
 ```
 {app_name} $ git init
 {app_name} $ git add .
@@ -39,7 +39,7 @@ $ cd {app_name}
 ```
 
 # Tips
-## artisan command in docker sail
+## artisan command in the docker sail
 - you type `./vendor/bin/sail` before artisan commands
     - exmaples
     ```
