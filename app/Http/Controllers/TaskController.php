@@ -13,15 +13,15 @@ class TaskController extends Controller
     {
         $folders = Folder::all();
 
-        $current_folder = Folder::find($id);
-        $tasks = $current_folder->tasks()->get();
+        // $current_folder = Folder::find($id);
+        // $tasks = $current_folder->tasks()->get();
 
-        // $tasks = Task::where('folder_id', $id)->get();
+        $tasks = Task::where('folder_id', $id)->get();
 
         return view('tasks/index', [
             'folders' => $folders,
-            'current_folder_id' => $current_folder->id,
-            // 'current_folder_id' => $id,
+            // 'current_folder_id' => $current_folder->id,
+            'current_folder_id' => $id,
             'tasks'  => $tasks,
         ]);
     }

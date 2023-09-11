@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Folder;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +17,18 @@ class TaskFactory extends Factory
      */
     public function definition(): array
     {
+        $statuses = [1,2,3];
+        $folders = Folder::get();
+        $int = random_int(1, 10);
+        $now = now();
+
         return [
-            //
+            'folder_id' => $folders->random()->id,
+            'title' => $this->faker->title(),
+            'due_date' => $now->modify("+{$int}day"),
+            'status' => $this->faker->randomElements($statuses),
+            'created_at' => $now,
+            'updated_at' => $now,
         ];
     }
 }
