@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FolderController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,5 +19,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/folders/{id}/tasks', [TaskController::class, 'index'])
-    ->name('tasks.index');
+Route::group([
+    'prefix' => 'folders/',
+    'as' => 'folders.',
+], function () {
+    Route::group([
+        'prefix' => '/{id}/tasks',
+        'as' => 'tasks.'
+    ], function () {
+        // /folders/{id}/tasks/{xxx}, name('folders.tasks.{xxx}')
+        Route::get('', [TaskController::class, 'index'])
+            ->name('index');
+    });
+
+    // /folders/, name('folders.{xxx}')
+    Route::get('create', [FolderController::class, 'create'])
+        ->name('create');
+    Route::post('store', [FolderController::class, 'store'])
+        ->name('store');
+});
