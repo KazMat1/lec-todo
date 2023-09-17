@@ -12,7 +12,7 @@
                     <div class="list-group">
                         @foreach ($folders as $folder)
                             <a href="{{ route('folders.tasks.index', ['id' => $folder->id]) }}"
-                                class="list-group-item {{ $current_folder_id === $folder->id ? 'active' : '' }}">
+                                class="list-group-item {{ $folder_id === $folder->id ? 'active' : '' }}">
                                 {{ $folder->title }}
                             </a>
                         @endforeach
@@ -24,7 +24,7 @@
                     <div class="panel-heading">タスク</div>
                     <div class="panel-body">
                         <div class="text-right">
-                            <a href="{{ route('folders.tasks.create', ['id' => $current_folder_id]) }}"
+                            <a href="{{ route('folders.tasks.create', ['id' => $folder_id]) }}"
                                 class="btn btn-default btn-block">
                                 タスクを追加する
                             </a>
