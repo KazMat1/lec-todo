@@ -23,14 +23,15 @@ class FolderController extends Controller
     /**
      * フォルダを作成し、DBに保存する
      *
-     * @param Illuminate\Http\StoreFolderRequest $request
-     * @return Illuminate\Http\RedirectResponse
+     * @param \Illuminate\Http\StoreFolderRequest $request フォルダ保存用のバリデーションリクエスト
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreFolderRequest $request): RedirectResponse
     {
-        $folder = Folder::create([
+        $params = [
             'title' => $request->title,
-        ]);
+        ];
+        $folder = Folder::create($params);
 
         return redirect()->route('folders.tasks.index', ['id' => $folder->id]);
     }

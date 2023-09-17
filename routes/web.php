@@ -30,6 +30,10 @@ Route::group([
         // /folders/{id}/tasks/{xxx}, name('folders.tasks.{xxx}')
         Route::get('', [TaskController::class, 'index'])
             ->name('index');
+        Route::get('create', [TaskController::class, 'create'])
+            ->name('create');
+        Route::post('store', [TaskController::class, 'store'])
+            ->name('store');
     });
 
     // /folders/, name('folders.{xxx}')
