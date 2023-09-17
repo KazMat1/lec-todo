@@ -35,10 +35,10 @@ class StoreTaskRequest extends FormRequest
         ];
     }
 
-    // public function messages(): array
-    // {
-    //     return [
-    //         'due_date.after_or_equal' => ':attribute には今日以降の日付を入力してください。',
-    //     ];
-    // }
+    public function messages(): array
+    {
+        return [
+            'due_date.after_or_equal' => ':attribute には今日以降の日付を入力してください。',
+        ];
+    }
 }

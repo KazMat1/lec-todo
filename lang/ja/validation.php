@@ -35,7 +35,7 @@ return [
     'can' => 'The :attribute field contains an unauthorized value.',
     'confirmed' => 'The :attribute field confirmation does not match.',
     'current_password' => 'The password is incorrect.',
-    'date' => ':attribute には日付を入力してください',
+    'date' => ':attribute には日付を入力してください。',
     'date_equals' => 'The :attribute field must be a date equal to :date.',
     'date_format' => 'The :attribute field must match the format :format.',
     'decimal' => 'The :attribute field must have :decimal decimal places.',
@@ -182,6 +182,7 @@ return [
 
     'attributes' => [
         'title' => 'タイトル',
+        'due_date' => '期限日'
     ],
 
 ];
