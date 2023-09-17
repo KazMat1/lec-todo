@@ -28,9 +28,10 @@ class FolderController extends Controller
      */
     public function store(StoreFolderRequest $request): RedirectResponse
     {
-        $folder = Folder::create([
+        $params = [
             'title' => $request->title,
-        ]);
+        ];
+        $folder = Folder::create($params);
 
         return redirect()->route('folders.tasks.index', ['id' => $folder->id]);
     }
