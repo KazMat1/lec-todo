@@ -64,4 +64,23 @@ class TaskTest extends TestCase
             'due_date' => '期限日 には今日以降の日付を入力してください。',
         ]);
     }
+
+    /**
+     * 定義された状態でない場合はバリデーションエラー
+     * @test
+     */
+    public function status_should_be_within_defined_numbers()
+    {
+        $this->seed('TaskSeeder');
+
+        $response = $this->post('folders/1/tasks/1/update', [
+            'title' => 'Sample Task',
+            'due_date' => Carbon::today()->format('Y/m/d'),
+            'status' => 999,
+        ]);
+
+        $response->assertSessionHasErrors([
+            'status' => '状態 には 未着手、着手中、完了 のいずれかを指定してください。',
+        ]);
+    }
 }

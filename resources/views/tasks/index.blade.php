@@ -11,7 +11,7 @@
                     </div>
                     <div class="list-group">
                         @foreach ($folders as $folder)
-                            <a href="{{ route('folders.tasks.index', ['id' => $folder->id]) }}"
+                            <a href="{{ route('folders.tasks.index', ['folder_id' => $folder->id]) }}"
                                 class="list-group-item {{ $folder_id === $folder->id ? 'active' : '' }}">
                                 {{ $folder->title }}
                             </a>
@@ -24,7 +24,7 @@
                     <div class="panel-heading">タスク</div>
                     <div class="panel-body">
                         <div class="text-right">
-                            <a href="{{ route('folders.tasks.create', ['id' => $folder_id]) }}"
+                            <a href="{{ route('folders.tasks.create', ['folder_id' => $folder_id]) }}"
                                 class="btn btn-default btn-block">
                                 タスクを追加する
                             </a>
@@ -47,7 +47,7 @@
                                         <span class="label {{ $task->status_class }}">{{ $task->status_label }}</span>
                                     </td>
                                     <td>{{ $task->formatted_due_date }}</td>
-                                    <td><a href="#">編集</a></td>
+                                    <td><a href="{{ route('folders.tasks.edit', ['folder_id' => $task->folder_id, 'task_id' => $task->id]) }}">編集</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

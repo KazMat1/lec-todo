@@ -1,19 +1,11 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Folders;
 
-use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Requests\BaseRequest;
 
-class StoreFolderRequest extends FormRequest
+class StoreFolderRequest extends BaseRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool
-    {
-        return true;
-    }
-
     /**
      * Get the validation rules that apply to the request.
      *

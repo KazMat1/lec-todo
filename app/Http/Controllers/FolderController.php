@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 
-use App\Http\Requests\StoreFolderRequest;
+use App\Http\Requests\Folders\StoreFolderRequest;
 use App\Models\Folder;
 
 class FolderController extends Controller
@@ -23,7 +23,7 @@ class FolderController extends Controller
     /**
      * フォルダを作成し、DBに保存する
      *
-     * @param \Illuminate\Http\StoreFolderRequest $request フォルダ保存用のバリデーションリクエスト
+     * @param \Illuminate\Http\Requests\Folders\StoreFolderRequest $request フォルダ保存用のバリデーションリクエスト
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreFolderRequest $request): RedirectResponse

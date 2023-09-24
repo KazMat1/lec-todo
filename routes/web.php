@@ -24,7 +24,7 @@ Route::group([
     'as' => 'folders.',
 ], function () {
     Route::group([
-        'prefix' => '/{id}/tasks',
+        'prefix' => '/{folder_id}/tasks',
         'as' => 'tasks.'
     ], function () {
         // /folders/{id}/tasks/{xxx}, name('folders.tasks.{xxx}')
@@ -34,6 +34,10 @@ Route::group([
             ->name('create');
         Route::post('store', [TaskController::class, 'store'])
             ->name('store');
+        Route::get('{task_id}/edit', [TaskController::class, 'edit'])
+            ->name('edit');
+        Route::post('{task_id}/update', [TaskController::class, 'update'])
+            ->name('update');
     });
 
     // /folders/, name('folders.{xxx}')
