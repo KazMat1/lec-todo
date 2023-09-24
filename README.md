@@ -35,6 +35,7 @@ $ cd {app_name}
 {app_name} $ git add .
 {app_name} $ git commit -m "first commit"
 {app_name} $ git remote add origin {your_uri_of_remote_repository}
+{app_name} $ git branch -M main
 {app_name} $ git push origin -u main
 ```
 
